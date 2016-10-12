@@ -7,7 +7,6 @@ var https = require('https');
 
 function getRepoContributors(repoOwner, repoName, cb) {
 var buildURL = 'https://api.github.com/repos/' + repoOwner + '/'+ repoName + '/contributors'
-console.log(buildURL)
 var configs = {
     url: buildURL,
     method: 'GET',
@@ -27,7 +26,7 @@ request(configs, (err, result, data) => {
       cb(avurl, path)
     })
   });
-}
+};
 
  function imageWrite (avurl, path) {
   var file = fs.createWriteStream(path);
